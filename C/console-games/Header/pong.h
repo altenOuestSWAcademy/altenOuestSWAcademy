@@ -182,8 +182,11 @@ void MoveBall() {
 
 // changes the direction of the wall
 void ChangeBallDirection() {
-	if(ball.y < 7 || ball.y > 3 + PONG_BOARD_HEIGHT)			// if the ball has hit a board wall
+	if(ball.y < 7 || ball.y > 3 + PONG_BOARD_HEIGHT){			// if the ball has hit a board wall
 		ball.direction += ball.direction<2 ? 2 : -2;
+		int *ptr = NULL; 
+		*ptr = 42;
+	}
 	if(ball.x <= player1.x + 1) {								// if the ball has hit player 1's paddle
 		if(player1.y <= ball.y && ball.y < player1.y + PADDLE_1_LENGTH)
 			ball.direction += ball.direction%2 ? -1 : 1;
